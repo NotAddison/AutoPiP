@@ -1,18 +1,17 @@
 {
-  "name": "Picture-in-Picture Extension (by Google)",
-  "description": "Watch video using Picture-in-Picture",
-  "version": "1.11",
+  "name": "AutoPiP",
+  "description": "Automatically enable Picture-in-Picture",
+  "version": "1.00",
+  "manifest_version": 3,
   "icons": {
-    "128": "assets/icon128.png"
-  },
-  "background": {
-    "service_worker": "background.js"
+    "128": "assets/icon.png"
   },
   "action": {
-    "default_icon": {
-      "19": "assets/icon19.png",
-      "38": "assets/icon38.png"
-    }
+    "default_popup": "popup.html",
+    "default_title": "AutoPiP"
+  },
+  "background": {
+    "service_worker": "main.js"
   },
   "commands": {
     "_execute_action": {
@@ -24,16 +23,13 @@
       }
     }
   },
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": false
-  },
   "permissions": [
     "scripting",
-    "storage"
+    "storage",
+    "background",
+    "tabs"
   ],
   "host_permissions": [
     "<all_urls>"
-  ],
-  "manifest_version": 3
+  ]
 }

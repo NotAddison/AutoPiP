@@ -1,17 +1,4 @@
-// Copyright 2018 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
+// --- [ FUNCTION: Get Video ] --- //
 function findLargestPlayingVideo() {
   const videos = Array.from(document.querySelectorAll('video'))
     .filter(video => video.readyState != 0)
@@ -22,13 +9,11 @@ function findLargestPlayingVideo() {
       return ((v2Rect.width * v2Rect.height) - (v1Rect.width * v1Rect.height));
     });
 
-  if (videos.length === 0) {
-    return;
-  }
-
+  if (videos.length === 0) return "No Video";
   return videos[0];
 }
 
+// --- [ FUNCTION: Req PiP Player ] --- //
 async function requestPictureInPicture(video) {
   await video.requestPictureInPicture();
   video.setAttribute('__pip__', true);
@@ -38,11 +23,12 @@ async function requestPictureInPicture(video) {
   new ResizeObserver(maybeUpdatePictureInPictureVideo).observe(video);
 }
 
+// --- [ FUNCTION: Update PiP Video ] --- //
 function maybeUpdatePictureInPictureVideo(entries, observer) {
   const observedVideo = entries[0].target;
   if (!document.querySelector('[__pip__]')) {
     observer.unobserve(observedVideo);
-    return;
+    return "Update";
   }
   const video = findLargestPlayingVideo();
   if (video && !video.hasAttribute('__pip__')) {
@@ -51,19 +37,21 @@ function maybeUpdatePictureInPictureVideo(entries, observer) {
   }
 }
 
+
+// --- [ EXECUTE ] --- //
 (async () => {
+
+  // Get Video
   const video = findLargestPlayingVideo();
-  if (!video) {
-    return;
-  }
+  if (!video) return false;
+
+  // Exit PiP (if already in PiP)
   if (video.hasAttribute('__pip__')) {
     document.exitPictureInPicture();
-    return;
+    return "Exit";
   }
-  await requestPictureInPicture(video);
-  _gaq.push(['_trackPageview', '/']);
-})();
 
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-134864766-1']);
-_gaq.push(['_setDetectTitle', false]);
+  // Request PiP
+  await requestPictureInPicture(video);
+  return true;
+})()
