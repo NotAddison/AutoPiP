@@ -6,12 +6,8 @@
 ### What does this extension do?
 > Automatically enables PiP when a user switches for a tab to another tab with a video playing. <br/>
 > It also automatically disables PiP when a user switches back to the tab with the video playing. <br/>
-
-<!-- Dropdown Demo -->
-<details>
-    <summary><b>Video Demo</b></summary>
-    <img src="./assets/demo.gif">
-</details>
+> <br/>
+> <video width="40%" controls><source src="./assets/demo.mp4" type="video/mp4"></video>
 
 ### How to install?
 1. Download the latest release from [here](#)
@@ -26,7 +22,7 @@
 
 <!-- Dropdown List of supported sites -->
 <details>
-    <summary><b>Supported Sites (Tested)</b></summary>
+    <summary><b>Tested Sites</b></summary>
     <li><a href="https://www.youtube.com/">YouTube</a></li>
 </details>
 
