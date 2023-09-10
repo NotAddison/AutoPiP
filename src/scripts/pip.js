@@ -38,6 +38,15 @@ function maybeUpdatePictureInPictureVideo(entries, observer) {
   }
 }
 
+// --- [ FUNCTION: Exit PiP ] --- //
+function exitPictureInPicture() {
+  try { 
+    if (!document.pictureInPictureElement) return false;
+    document.exitPictureInPicture().then(() => {}) 
+  }
+  catch (error) {}
+  return true;
+}
 
 // --- [ EXECUTE ] --- //
 (async () => {
@@ -48,12 +57,11 @@ function maybeUpdatePictureInPictureVideo(entries, observer) {
 
   // Exit PiP (if already in PiP)
   if (video.hasAttribute('__pip__')) {
-    try { document.exitPictureInPicture() } 
-    catch (error) {}
+    exitPictureInPicture();
     return "Exit";
   }
 
-  // Request PiP
+  // Request PiP  
   await requestPictureInPicture(video);
   return true;
 })()

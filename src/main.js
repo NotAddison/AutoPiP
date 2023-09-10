@@ -2,8 +2,18 @@ var currentTab = 0;
 var prevTab = null;
 var targetTab = null;
 var log = []
+var toggle = true;
+
+// Get Settings
+chrome.storage.sync.get(['toggle'], function(result) {
+  result.toggle ? toggle = true : toggle = false;
+  console.log("AutoPiP Enabled:", toggle)
+});
 
 chrome.tabs.onActivated.addListener(function(tab) {
+  // --- [0] : Check settings  --- //
+  if (!toggle) return;
+  
   console.clear();
   currentTab = tab.tabId;
   
@@ -27,7 +37,12 @@ chrome.tabs.onActivated.addListener(function(tab) {
       targetTab = null;
     });
 
-    targetTab = null;
+    // If page has a video, set targetTab
+    chrome.scripting.executeScript({target: {tabId: currentTab}, files: ['./scripts/check-video.js']}, (results) => {
+      console.log("Has Video:", results[0].result);
+      if (results[0].result) targetTab = currentTab;
+      else {}
+    });
   }
 
   // --- [3] : Toggle PiP *(if there is a targetTab AND user is not in target tab)  ---
@@ -47,7 +62,6 @@ chrome.tabs.onActivated.addListener(function(tab) {
       }
     });
   }
-
 
   console.log("Current:", tab)
   console.log("Previous:", prevTab)

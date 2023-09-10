@@ -1,27 +1,17 @@
 {
   "name": "AutoPiP",
   "description": "Automatically enable Picture-in-Picture",
-  "version": "1.00",
+  "version": "1.0.0",
   "manifest_version": 3,
   "icons": {
     "128": "assets/icon.png"
   },
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "./popup/options.html",
     "default_title": "AutoPiP"
   },
   "background": {
     "service_worker": "main.js"
-  },
-  "commands": {
-    "_execute_action": {
-      "suggested_key": {
-        "windows": "Alt+P",
-        "mac": "Alt+P",
-        "chromeos": "Alt+P",
-        "linux": "Alt+P"
-      }
-    }
   },
   "permissions": [
     "scripting",
