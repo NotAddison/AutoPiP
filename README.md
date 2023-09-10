@@ -7,7 +7,7 @@
 > Automatically enables PiP when a user switches for a tab to another tab with a video playing. <br/>
 > It also automatically disables PiP when a user switches back to the tab with the video playing. <br/>
 
-https://github.com/NotAddison/AutoPiP/assets/92768150/a7b51073-d26d-498a-9a48-1aad788782c6
+https://github.com/NotAddison/AutoPiP/assets/92768150/158fdf72-8480-469a-8043-7e7130238416
 
 ### How to install?
 1. Download the latest release from [here](#)
