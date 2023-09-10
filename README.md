@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./src/assets/banner.png">
+    <img src="./assets/banner.png">
 </div>
 
 -----------
@@ -10,7 +10,7 @@
 <!-- Dropdown Demo -->
 <details>
     <summary><b>Video Demo</b></summary>
-    <img src="./src/assets/demo.gif">
+    <img src="./assets/demo.gif">
 </details>
 
 ### How to install?
