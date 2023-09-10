@@ -48,7 +48,8 @@ function maybeUpdatePictureInPictureVideo(entries, observer) {
 
   // Exit PiP (if already in PiP)
   if (video.hasAttribute('__pip__')) {
-    document.exitPictureInPicture();
+    try { document.exitPictureInPicture() } 
+    catch (error) {}
     return "Exit";
   }
 
