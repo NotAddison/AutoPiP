@@ -1,13 +1,38 @@
-# Picture-in-Picture Chrome Extension
+<div align="center">
+    <img src="./assets/banner.png">
+</div>
 
-A simple Chrome Extension to demonstrate the [Picture-in-Picture Web API](https://wicg.github.io/picture-in-picture/) in Chrome.
+-----------
+### What does this extension do?
+> Automatically enables PiP when a user switches for a tab to another tab with a video playing. <br/>
+> It also automatically disables PiP when a user switches back to the tab with the video playing. <br/>
 
-Get it on the Chrome Web Store at https://chrome.google.com/webstore/detail/hkgfoiooedgoejojocmhlaklaeopbecg
+https://github.com/NotAddison/AutoPiP/assets/92768150/a7b51073-d26d-498a-9a48-1aad788782c6
 
-<img src="https://raw.githubusercontent.com/beaufortfrancois/picture-in-picture-chrome-extension/master/screenshot.png">
+### How to install?
+1. Download the latest release from [here](#)
+2. Unzip the file
+3. Open the Extension Management page by navigating to `chrome://extensions`.
+4. Enable Developer Mode by clicking the toggle switch next to **Developer mode**.
+5. Click the **LOAD UNPACKED** button and select the extension `src` directory.
 
-## Configuration
+### How to use?
+1. Open a video in a tab (ensure that the video is playing)
+2. Switch to another tab
 
-The keyboard shortcut (defaults to `Alt-P`) can be changed on the
-Chrome Extension Shortcuts settings page:
-chrome://extensions/shortcuts
+<!-- Dropdown List of supported sites -->
+<details>
+    <summary><b>Tested Sites</b></summary>
+    <li><a href="https://www.youtube.com/">YouTube</a></li>
+</details>
+
+
+### How to contribute?
+1. Fork this repository
+2. Clone the forked repository
+3. Make changes
+4. Create a pull request
+
+### Credits
+- [Chrome PiP Extension]() - Forked PiP code (I was lazy to code it from scratch lol)
+- [PiP Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API) - Used for PiP documentation

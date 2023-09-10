@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AutoPiP</title>
+    <meta name="description" content="Automatically enable PiP">
+    <link rel="stylesheet" href="./options.css">
+  </head>
+  <body>
+    <div class="flex gap">
+      <img src="../assets/icon.png" height="50" width="50">
+      <div>
+        <h1>AutoPiP</h1>
+        <p>Automatically enable PiP</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 1rem; display: flex; flex-flow: column; gap: 0.5rem;">
+      <!-- On/Off Toggle -->
+      <!-- <div class="flex">
+        <input type="checkbox" id="extensionToggle" checked>
+        <label for="extensionToggle">Enable / Disable Extension</label>
+      </div> -->
+
+      <button id="toggle">DISABLE</button>
+      <button id="report">Report an issue</button>
+
+      <div class="flex" style="margin-top: 0.25rem; justify-content: space-between;">
+        <p>View on <a href="https://github.com/NotAddison/AutoPiP/" target="_blank">GitHub</a></p>
+        <p>Version: <span id="version">0.0.0</span></p>
+      </div>
+    </div>
+
+    
+    
+    <script src="./options.js" async defer></script>
+  </body>
+</html>

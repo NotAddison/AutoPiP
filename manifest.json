@@ -1,0 +1,25 @@
+{
+  "name": "AutoPiP",
+  "description": "Automatically enable Picture-in-Picture",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "128": "assets/icon.png"
+  },
+  "action": {
+    "default_popup": "./popup/options.html",
+    "default_title": "AutoPiP"
+  },
+  "background": {
+    "service_worker": "main.js"
+  },
+  "permissions": [
+    "scripting",
+    "storage",
+    "background",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
