@@ -6,8 +6,8 @@
 ### What does this extension do?
 > Automatically enables PiP when a user switches for a tab to another tab with a video playing. <br/>
 > It also automatically disables PiP when a user switches back to the tab with the video playing. <br/>
-> <br/>
-> <video width="40%" controls><source src="./assets/demo.mp4" type="video/mp4"></video>
+
+https://github.com/NotAddison/AutoPiP/assets/92768150/a7b51073-d26d-498a-9a48-1aad788782c6
 
 ### How to install?
 1. Download the latest release from [here](#)
