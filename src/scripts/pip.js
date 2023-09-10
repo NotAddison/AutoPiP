@@ -1,8 +1,9 @@
 // --- [ FUNCTION: Get Video ] --- //
-function findLargestPlayingVideo() {
+function getVideos() {
   const videos = Array.from(document.querySelectorAll('video'))
     .filter(video => video.readyState != 0)
     .filter(video => video.disablePictureInPicture == false)
+    .filter(video => video.currentTime > 0 && !video.paused && !video.ended) // Filter: Ensure Video is Playing
     .sort((v1, v2) => {
       const v1Rect = v1.getClientRects()[0]||{width:0,height:0};
       const v2Rect = v2.getClientRects()[0]||{width:0,height:0};
@@ -30,7 +31,7 @@ function maybeUpdatePictureInPictureVideo(entries, observer) {
     observer.unobserve(observedVideo);
     return "Update";
   }
-  const video = findLargestPlayingVideo();
+  const video = getVideos();
   if (video && !video.hasAttribute('__pip__')) {
     observer.unobserve(observedVideo);
     requestPictureInPicture(video);
@@ -42,7 +43,7 @@ function maybeUpdatePictureInPictureVideo(entries, observer) {
 (async () => {
 
   // Get Video
-  const video = findLargestPlayingVideo();
+  const video = getVideos();
   if (!video) return false;
 
   // Exit PiP (if already in PiP)
