@@ -4,8 +4,8 @@
 
 -----------
 ### What does this extension do?
-> Automatically enables PiP when a user switches for a tab to another tab with a video playing. <br/>
-> It also automatically disables PiP when a user switches back to the tab with the video playing. <br/>
+> This extension automatically **enables** PiP (Picture-In-Picture) when a user switches from one tab to another with a video playing in the background. <br/>
+> It also automatically **disables** PiP when a user switches back to the tab playing the video.
 
 https://github.com/NotAddison/AutoPiP/assets/92768150/158fdf72-8480-469a-8043-7e7130238416
 
