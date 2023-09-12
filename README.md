@@ -34,5 +34,5 @@ https://github.com/NotAddison/AutoPiP/assets/92768150/158fdf72-8480-469a-8043-7e
 4. Create a pull request
 
 ### Credits
-- [Chrome PiP Extension]() - Forked PiP code (I was lazy to code it from scratch lol)
+- [Chrome PiP Extension](https://github.com/GoogleChromeLabs/picture-in-picture-chrome-extension) - Forked PiP code (I was lazy to code it from scratch lol)
 - [PiP Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API) - Used for PiP documentation
